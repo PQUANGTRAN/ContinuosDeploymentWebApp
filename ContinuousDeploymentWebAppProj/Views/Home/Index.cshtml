@@ -64,20 +64,20 @@ Google map London
         // a sample list of JSON encoded data of places to visit in Liverpool, UK
         // you can either make up a JSON list server side, or call it from a controller using JSONResult
         var data = [
-                        { "Id": 1, "PlaceName": "Liverpool Museum", "OpeningHours":"9-5, M-F","GeoLong": "53.410146", "GeoLat": "-2.979919" },
-                        { "Id": 2, "PlaceName": "Merseyside Maritime Museum", "OpeningHours": "9-1,2-5, M-F", "GeoLong": "53.401217", "GeoLat": "-2.993052" },
-                        { "Id": 3, "PlaceName": "Walker Art Gallery", "OpeningHours": "9-7, M-F", "GeoLong": "53.409839", "GeoLat": "-2.979447" },
-                        { "Id": 4, "PlaceName": "National Conservation Centre", "OpeningHours": "10-6, M-F", "GeoLong": "53.407511", "GeoLat": "-2.984683" },
-                        { "Id": 5, "PlaceName": "Liverpool Museum 1", "OpeningHours":"9-5, M-F","GeoLong": "53.710146", "GeoLat": "-2.979919" },
-                        { "Id": 6, "PlaceName": "Merseyside Maritime Museum 1", "OpeningHours": "9-1,2-5, M-F", "GeoLong": "53.701217", "GeoLat": "-2.993052" },
-                        { "Id": 7, "PlaceName": "Walker Art Gallery 1", "OpeningHours": "9-7, M-F", "GeoLong": "53.709839", "GeoLat": "-2.979447" },
-                        { "Id": 8, "PlaceName": "National Conservation Centre 1", "OpeningHours": "10-6, M-F", "GeoLong": "53.707511", "GeoLat": "-2.984683" }
+                        { "Id": 1, "PlaceName": "Liverpool Museum", "OpeningHours":"9-5, M-F","GeoLat": "53.410146", "GeoLong": "-2.979919" },
+                        { "Id": 2, "PlaceName": "Merseyside Maritime Museum", "OpeningHours": "9-1,2-5, M-F", "GeoLat": "53.401217", "GeoLong": "-2.993052" },
+                        { "Id": 3, "PlaceName": "Walker Art Gallery", "OpeningHours": "9-7, M-F", "GeoLat": "53.409839", "GeoLong": "-2.979447" },
+                        { "Id": 4, "PlaceName": "National Conservation Centre", "OpeningHours": "10-6, M-F", "GeoLat": "53.407511", "GeoLong": "-2.984683" },
+                        { "Id": 5, "PlaceName": "Liverpool Museum 1", "OpeningHours":"9-5, M-F","GeoLat": "53.410156", "GeoLong": "-2.979919" },
+                        { "Id": 6, "PlaceName": "Merseyside Maritime Museum 1", "OpeningHours": "9-1,2-5, M-F", "GeoLat": "53.401227", "GeoLong": "-2.993052" },
+                        { "Id": 7, "PlaceName": "Walker Art Gallery 1", "OpeningHours": "9-7, M-F", "GeoLat": "53.409849", "GeoLong": "-2.979447" },
+                        { "Id": 8, "PlaceName": "National Conservation Centre 1", "OpeningHours": "10-6, M-F", "GeoLat": "53.407521", "GeoLong": "-2.984683" }
                ];
 
         // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
         $.each(data, function(i, item) {
             var marker = new google.maps.Marker({
-                'position': new google.maps.LatLng(item.GeoLong, item.GeoLat),
+                'position': new google.maps.LatLng(item.GeoLat, item.GeoLong),
                 'map': map,
                 'title': item.PlaceName
             });
